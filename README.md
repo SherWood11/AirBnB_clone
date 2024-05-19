@@ -4,7 +4,7 @@ This project creates a copy of the [AirBnB](https://airbnb.com) website
 
 ## Description of the command interpreter
 - **Start** -> To start the command interpreter 
-1. First execute the == console.py ==
+1. First execute the == *console.py*
 2. Type your commands after the program is executed
 - **Use** -> Commands are (quit, EOF, help)
 1. quit: quit the program
