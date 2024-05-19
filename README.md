@@ -10,5 +10,5 @@ This project create a copy of the [AirBnB](https://airbnb.com) website
 1. quit: quit the program
 2. EOF: exit the program
 3. help: help to know about the commands and how to use them
-- **Examples** -> To Exit from the command interpreter simply type ==EOF==
-or ==quit==.
+- **Examples** -> To Exit from the command interpreter simply type <mark>EOF</mark>
+or <mark>quit</mark>.
