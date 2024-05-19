@@ -906,7 +906,7 @@ class TestPlace(unittest.TestCase):
 
     def test_update_place(self):
         """Test update place object.
-OB        """
+        """
         with patch('sys.stdout', new=StringIO()) as f:
             pl = Place()
             pl.name = "Cecilia"
@@ -1000,7 +1000,8 @@ class TestPlaceDotNotation(unittest.TestCase):
             pl.name = "Cecilia"
             HBNBCommand().onecmd(HBNBCommand().precmd(
                                  f'Place.update({pl.id}, name, "Ife")'))
-OB            self.assertEqual(pl.__dict__["name"], "Ife")
+            self.assertEqual(pl.__dict__["name"], "Ife")
+
 
         with patch('sys.stdout', new=StringIO()) as f:
             pl = Place()
@@ -1019,34 +1020,36 @@ class TestPlaceDotNotation(unittest.TestCase):
             self.assertNotIn("color", pl.__dict__.keys())
             self.assertEqual(pl.__dict__["age"], 10)
 
-OB    def test_update_place_dict(self):
-        """Test update place object.
-        """
-        with patch('sys.stdout', new=StringIO()) as f:
-            pl = Place()
-            pl.age = 75
-            cmmd = f'Place.update({pl.id}, {{"age": 25,"color":"black"}})'
-            HBNBCommand().onecmd(HBNBCommand().precmd(cmmd))
-            self.assertEqual(pl.__dict__["age"], 25)
-            self.assertIsInstance(pl.__dict__["age"], int)
 
-    def test_destroy_place(self):
-        """Test destroy place object.
-        """
-OB        with patch('sys.stdout', new=StringIO()):
-OB            pl = Place()
-            HBNBCommand().onecmd(HBNBCommand().precmd(
-OB                                 f'Place.destroy({pl.id})'))
-            self.assertNotIn("Place.{}".format(
-                pl.id), storage.all().keys())
-OB
+def test_update_place_dict(self):
+    """Test update place object.
+    """
+    with patch('sys.stdout', new=StringIO()) as f:
+        pl = Place()
+        pl.age = 75
+        cmmd = f'Place.update({pl.id}, {{"age": 25,"color":"black"}})'
+        HBNBCommand().onecmd(HBNBCommand().precmd(cmmd))
+        self.assertEqual(pl.__dict__["age"], 25)
+        self.assertIsInstance(pl.__dict__["age"], int)
+
+
+def test_destroy_place(self):
+    """Test destroy place object.
+    """
+    with patch('sys.stdout', new=StringIO()):
+        pl = Place()
+        HBNBCommand().onecmd(HBNBCommand().precmd(
+            f'Place.destroy({pl.id})'))
+        self.assertNotIn("Place.{}".format(
+        pl.id), storage.all().keys())
+
 
 class TestAmenity(unittest.TestCase):
     """Testing the `amenity` commands.
     """
 
     def setUp(self):
-OB        pass
+        pass
 
     def tearDown(self) -> None:
         """Resets FileStorage data."""
