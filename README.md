@@ -1,7 +1,7 @@
 # Description of the project 👾
 ---
 This project creates a copy of the [AirBnB](https://airbnb.com) website
-
+---
 ## Description of the command interpreter
 - **Start** -> To start the command interpreter 
 1. First execute the *console.py*
